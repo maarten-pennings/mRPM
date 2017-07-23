@@ -6,7 +6,8 @@ This project describes how to make a RPM (rotations per minute) meter.
 It uses an ESP8266, a 4 element 8x8 LED matrix and a line tracking sensor.
 Jan Ridders of [Jan Ridders Modelbouw](http://www.ridders.nu/) requested this project.
 He needs to measure the speed of his stirling, steam or combustion engines.
-The ESP8266 was chosen because it is easy and cheap; this project does not (yet?) use the WiFi capabilities of the ESP8266.
+The ESP8266 was chosen because it is easy, cheap and known to Maarten; 
+this project does not (yet?) use the WiFi capabilities of the ESP8266.
 
 ## Demo
 See [YouTube](https://youtu.be/PuOR1rizvE4) for a demo of the project.
@@ -20,4 +21,8 @@ The following components are used in the project, total cost below $10.
 - [NodeMCU/ESP8266](https://www.aliexpress.com/item/NodeMCU-WIFI-module-integration-of-ESP8266-extra-memory-32M-flash-USB-serial-CH340G/32739832131.html)
   NodeMCU V3: ESP8266, 32M flash, CH340G (USB-serial) - sub $4
 
+## Wiring
+For wiring information (power, schematics, photos) refer to the [wiring](wiring) directory.
 
+## Software
+For the firmware inside the ESP8266 refer to the [arduino](arduino) directory.
