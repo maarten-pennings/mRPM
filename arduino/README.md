@@ -18,6 +18,8 @@ Note that the font matrix has been patched. It contains 11 special characters: t
 
  
 ## Steps
+The instructions below show `Maarten` as user name (e.g. ``C:\Users\Maarten\Documents`). 
+Substitue your own user name.
 
 
 ### Download and install Arduino for ESP8266
