@@ -18,7 +18,7 @@ Note that the font matrix has been patched. It contains 11 special characters: t
 
  
 ## Steps
-The instructions below show `Maarten` as user name (e.g. ``C:\Users\Maarten\Documents`). 
+The instructions below show `Maarten` as user name (e.g. `C:\Users\Maarten\Documents`). 
 Substitue your own user name.
 
 
@@ -62,6 +62,8 @@ Next, follow these steps
  - Flash it by it by pressing the Upload (green right arrow) button.
  - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
  - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
+ 
+ You should now have this [result](https://youtu.be/PuOR1rizvE4).
  
  Congratulations, you're done!
  
