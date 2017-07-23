@@ -39,3 +39,5 @@ The connection between the ESP8266 and the sensor is shown in two photos, ESP si
   
   ![Matrix to ESP8266 connection](4sensor-esp.jpg)
 
+## Firmware
+Next step is to flash the [firmware](../arduino) via the Arduino IDE.
