@@ -25,33 +25,41 @@ There is an official [Arduino web page](http://www.arduinesp.com/getting-started
 However, it uses a bare ESP8266 module; this project uses an ESP8266 module on a so-called nodemcu board (basically adding a USB to UART bridge).
 This nodemcu specific [instructables](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/) guide might be more appropriate.
 
-In either case, install the Arduino IDE, add the ESP compiler/libraries/examples and try to get the blink example to work.
-This requires the ESP board to be connected to your PC with a micro USB cable.
+In either case
+ - Install the Arduino IDE.
+ - Add the ESP8266 compiler/libraries/examples.
+ - Get the blink example to work (this requires the ESP8266 board to be connected to your PC with a micro USB cable).
+ - Change the blink example a bit (e.g. make it blink faster) and save the (edited) blink project.
 
-Change the blink example a bit (e.g. make it blink faster). 
-Finally save the (edited) blink project.
-Typically it is saved at `C:\Users\Maarten\Documents\Arduino\Blink`.
-
-Write down the root directory for the Arduino projects (`C:\Users\Maarten\Documents\Arduino`).
+Typically the project is saved at `C:\Users\Maarten\Documents\Arduino\Blink`.
+Write down the root directory for the Arduino projects
+```
+C:\Users\Maarten\Documents\Arduino
+```
 
 
 ### Download and install this project
-Download the zip of this project (press the green button on the [home page](https://github.com/maarten-pennings/mRPM).)
-Open the zip, locate the directory `arduino` and within that the subdirectory `mRPM`.
-```
-C:\Users\Maarten\Downloads\mRPM-master.zip\mRPM-master\arduino\mRPM
-```
-
-Copy the `mRPM` directory to the Arduino project root.
-```
-C:\Users\Maarten\Documents\Arduino\mRPM
-```
+Follow these steps
+ - Download the zip of this project (press the green button on the [home page](https://github.com/maarten-pennings/mRPM)).
+ - Open the zip, locate the directory `arduino` and within that the subdirectory `mRPM`.
+   ```
+   C:\Users\Maarten\Downloads\mRPM-master.zip\mRPM-master\arduino\mRPM
+   ```
+- Copy the `mRPM` directory to the Arduino project root.
+   ```
+   C:\Users\Maarten\Documents\Arduino\mRPM
+   ```
 
 
 ### Open, compile, flash
-Double click the project `C:\Users\Maarten\Documents\Arduino\mRPM\mRPM.ino` to open it in the Arduino IDE.
-Compile it by pressing the Verify (green V in upper left corner) button.
-Flash it by it by pressing the Upload (green right arrow) button.
-Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
-This requires the ESP board to be wired to the matrix and sensor - see [wiring](../wiring) for instructions.
+The ESP8266 board is assumed to be wired to the matrix and sensor - see [wiring](../wiring) for instructions.
 
+Next, follow these steps
+ - Double click the project `C:\Users\Maarten\Documents\Arduino\mRPM\mRPM.ino` to open it in the Arduino IDE.
+ - Compile it by pressing the Verify (green V in upper left corner) button.
+ - Flash it by it by pressing the Upload (green right arrow) button.
+ - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
+ - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
+ 
+ Congratulations, you're done!
+ 
