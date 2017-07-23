@@ -1,0 +1,22 @@
+mRPM wiring
+===========
+Maarten Pennings 2017 07 23
+
+
+ MATRIX FLATCABLE ESP8266 
+ ------ --------- ------- 
+    VCC     red   3V3   
+    GND    brown  GND   
+    DIN   orange  D7    
+     CS   yellow  D2    
+    CLK    green  D5    
+ ------ --------- ------- 
+
+ 
+ SENSOR WIRES ESP8266 
+ ------ ----- ------- 
+     DO green D6      
+    GND black GND     
+    VCC  red  VIN(5V) 
+ ------ ----- ------- 
+ 
