@@ -7,14 +7,14 @@ This project uses the Arduino IDE to compile and upload an image for the ESP8266
 The mRPM firmware consists of the following modules
  - mRPM, the main program
  - MAX7219_Dot_Matrix, a driver for the 4 x 8x8 dot matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix)
- - bitBangedSPI, the SPI driver use dby the dot matrix driver - by [Nick Gammon](https://github.com/nickgammon/bitBangedSPI)
+ - bitBangedSPI, the SPI driver used by the dot matrix driver - by [Nick Gammon](https://github.com/nickgammon/bitBangedSPI)
  - a font for the matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix)
 
 The latter three modules are written by [Nick Gammon](https://github.com/nickgammon).
 Experienced Arduino programmers will store those modules in their library.
 For easy integration, they are copied into this project.
 
-Note that the font matrix has been patched. It contains 11 special characters: the digits '0' to '9' and the dash '-', all with a trailing decimal dot.
+Note that the font has been patched. It contains 11 special characters: the digits '0' to '9' and the dash '-', all with a trailing decimal dot.
 
  
 ## Steps
@@ -24,7 +24,7 @@ Substitue your own user name.
 
 ### Download and install Arduino for ESP8266
 There is an official [Arduino web page](http://www.arduinesp.com/getting-started) explaining how to use the ESP8266 with the Arduino IDE.
-However, it uses a bare ESP8266 module; this project uses an ESP8266 module on a so-called nodemcu board (basically adding a USB to UART bridge).
+However, it uses a bare ESP8266 module; this project uses an ESP8266 module on a so-called nodemcu board (basically adding a USB to UART bridge and a 5V to 3V3 voltage converter).
 This nodemcu specific [instructables](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/) guide might be more appropriate.
 
 In either case
@@ -62,6 +62,7 @@ Next, follow these steps
  - Flash it by it by pressing the Upload (green right arrow) button.
  - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
  - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
+ - On tbe PC open the Arduino terminal to see the measurement process of the ESP8266.
  
  You should now have this [result](https://youtu.be/PuOR1rizvE4).
  
