@@ -2,6 +2,10 @@
 The wiring of Maarten's RPM meter
 
 ## Introduction
+This project consists of a sensor, a LED matrix and an ESP8266. 
+See the [main](../README.md) page for details on these components.
+This page explains how to connect them.
+
 The sensor and the matrix need to be connected to the ESP8266.
  - The _sensor_ has three pins: power (VCC 5V, GND) and a digital out (DO).
  - The _LED matrix_ is more complicated with its 5 pins; it has power (VCC 3V3, GND), data in (DIN), clock (CLK) and chip select (CS).
@@ -47,7 +51,7 @@ They show a blocky pattern like in the photo below.
   
 It turned out that the 8x8 modules are inserted up-side-down.
 When the LEDs are facing upwards, and the input is on the right hand side, 
-the printed serial number on the module should be at the bottom as shown in the phpto below.
+the printed serial number on the module should be at the bottom as shown in the photo below.
 
   ![LED matrix not working](MatrixOrientation.jpg)
 
