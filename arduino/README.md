@@ -8,7 +8,7 @@ The mRPM firmware consists of the following modules
  - mRPM, the main program
  - MAX7219_Dot_Matrix, a driver for the 4 x 8x8 dot matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix)
  - bitBangedSPI, the SPI driver used by the dot matrix driver - by [Nick Gammon](https://github.com/nickgammon/bitBangedSPI)
- - a font for the matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix)
+ - a font for the matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix), but patched
 
 The latter three modules are written by [Nick Gammon](https://github.com/nickgammon).
 Experienced Arduino programmers will store those modules in their library.
@@ -19,13 +19,13 @@ Note that the font has been patched. It contains 11 special characters: the digi
  
 ## Steps
 The instructions below show `Maarten` as user name (e.g. `C:\Users\Maarten\Documents`). 
-Substitue your own user name.
+Substitute your own user name.
 
 
 ### Download and install Arduino for ESP8266
-There is an official [Arduino web page](http://www.arduinesp.com/getting-started) explaining how to use the ESP8266 with the Arduino IDE.
-However, it uses a bare ESP8266 module; this project uses an ESP8266 module on a so-called nodemcu board (basically adding a USB to UART bridge and a 5V to 3V3 voltage converter).
-This nodemcu specific [instructables](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/) guide might be more appropriate.
+This project does not use a bare ESP8266 module; it uses an ESP8266 module on a so-called nodemcu board (basically adding a USB to UART bridge and a 5V to 3V3 voltage converter).
+This nodemcu specific [instructables page](http://www.instructables.com/id/Quick-Start-to-Nodemcu-ESP8266-on-Arduino-IDE/) is more appropriate
+than the official [Arduino web page](http://www.arduinesp.com/getting-started).
 
 In either case
  - Install the Arduino IDE.
@@ -47,7 +47,7 @@ Follow these steps
    ```
    C:\Users\Maarten\Downloads\mRPM-master.zip\mRPM-master\arduino\mRPM
    ```
-- Copy the `mRPM` directory to the Arduino project root.
+ - Copy the `mRPM` directory to the Arduino project root.
    ```
    C:\Users\Maarten\Documents\Arduino\mRPM
    ```
@@ -62,9 +62,14 @@ Next, follow these steps
  - Flash it by it by pressing the Upload (green right arrow) button.
  - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
  - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
- - On tbe PC open the Arduino terminal to see the measurement process of the ESP8266.
+ - On the PC open the Arduino terminal to see the measurement process of the ESP8266.
  
- You should now have this [result](https://youtu.be/PuOR1rizvE4).
+You should now have this [result](https://youtu.be/PuOR1rizvE4).
  
- Congratulations, you're done!
+Congratulations, you're done!
  
+
+## Implementation notes
+There is a separate document with some [implementation notes](implnotes.md).
+
+(end of doc)
