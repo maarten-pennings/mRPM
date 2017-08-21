@@ -26,3 +26,5 @@ For wiring information (power, schematics, photos) refer to the [wiring](wiring)
 
 ## Software
 For the firmware inside the ESP8266 refer to the [arduino](arduino) directory.
+
+(end of doc)

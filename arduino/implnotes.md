@@ -89,4 +89,41 @@ The `movav2` column contains the (averaged) revolution time in us.
 As an example we take the last measured result `111853`.
 A value of 111853 us or 0.111853 s means 60/0.111853 or 536 RPM.
 
+## Power
+
+Three settings were tested on their effect of power usage:
+ - ESP8266 running at either 80MHz or 160MHz:
+   `ESP8266_FREQ` at 80 or 160.  
+ - Display intensity from 0% to 100%:
+   `DSP_INTENSITY` from 0 to 15.
+ - WiFi radio disabled or enabled:
+   `ESP8266_WIFI` at 0 or 1.
+ 
+The power was tested by using an amp meter in the USB line (so at 5V).
+The wheel was running at 1100 RPM or about 20 interrupts per second.
+
+  |ESP8266_FREQ|DSP_INTENSITY|ESP8266_WIFI|mA @ USB|
+  |:----------:|:-----------:|:----------:|:------:|
+  |     80     |      0      |      0     |   40   |
+  |     80     |      8      |      0     |   130  |
+  |     80     |      15     |      0     |   200  |
+  |            |             |            |        |
+  |     80     |      0      |      1     |   90   |
+  |     80     |      8      |      1     |   180  |
+  |     80     |      15     |      1     |   250  |
+  |            |             |            |        |
+  |     160    |      0      |      0     |   40   |
+  |   **160**  |    **8**    |    **0**   | **140**|
+  |     160    |      15     |      0     |   210  |
+  |            |             |            |        |
+  |     160    |      0      |      1     |   100  |
+  |     160    |      8      |      1     |   190  |
+  |     160    |      15     |      1     |   260  |
+            
+ The chosen configuration is marked in the table:
+  - 160MHz since it is likely to improve measurements at neglectable cost
+  - Intensity half way
+  - WiFi off saves quite some power, and is not used
+ 
+ 
 (end of doc)

@@ -1,4 +1,5 @@
 // RPM measurement tool for Jan Ridders
+//     2017 Aug  21  Maarten Pennings  v4  Enabled low power (wifi off), added version
 //     2017 Aug  20  Maarten Pennings  v3  sen_isr improved (no longer ignores spike-times)
 //     2017 July 16  Maarten Pennings  v2  Removed 'String', fixed spelling errors, fixed error in hz100, added but_init(), added #defines
 //     2017 July 10  Maarten Pennings  v1  Created
@@ -14,10 +15,33 @@
 //     https://www.aliexpress.com/item/1Pcs-MAX7219-Dot-Matrix-Module-For-arduino-Microcontroller-4-In-One-Display-with-5P-Line/32624431446.html
 //   - RobotDyn Line tracking sensor, digital out
 //     https://www.aliexpress.com/item/Line-tracking-Sensor-For-robotic-and-car-DIY-Arduino-projects-Digital-Out/32654587628.html
+#define VERSION "v4"
 
 
 #include <limits.h>
+#include <ESP8266WiFi.h>
+extern "C" {
+#include <user_interface.h>
+}
 #include "MAX7219_Dot_Matrix.h"
+
+
+// ESP8266 power control
+// ============================================================
+
+#define ESP8266_FREQ   160 // CPU frequency in MHz (valid: 80, 160)
+#define ESP8266_WIFI   0   // WiFi radio enabled (valid: 0, 1)
+
+// Configures WiFi power and CPU speed
+void esp8266_init(void) {
+  #if !ESP8266_WIFI
+    // Turn off ESP8266 radio
+    WiFi.forceSleepBegin();
+    delay(1);       
+  #endif                         
+  // Set CPU clock frequency
+  system_update_cpu_freq(ESP8266_FREQ);
+}
 
 
 // Led Matrix display
@@ -27,7 +51,7 @@
 #define DSP_DIN        D7   // DIN pin of display is connected to D7 of ESP8266.
 #define DSP_CLK        D5   // CLK pin of display is connected to D5 of ESP8266.
 #define DSP_CS         D2   // CS  pin of display is connected to D2 of ESP8266.
-#define DSP_INTENSITY  10   // Brightness level of display: 0 (min) to 15 (max).
+#define DSP_INTENSITY  8    // Brightness level of display: 0 (min) to 15 (max).
 
 MAX7219_Dot_Matrix dsp(DSP_COUNT,DSP_CS,DSP_DIN,DSP_CLK);
 
@@ -41,6 +65,15 @@ void dsp_init(void) {
 void dsp_set(char * msg) {
   int offset = (strlen(msg)-DSP_COUNT)*8 - 1; // The -1 shifts one column - looks better.
   dsp.sendSmooth(msg,offset);
+}
+
+// Scrolls 'msg' on the display; returns when scrolling done ('msg' can have any length)).
+void dsp_scroll(char * msg) {
+  int len = strlen(msg);
+  for(int offset=-DSP_COUNT*8; offset<len*8; offset++ ) {
+    dsp.sendSmooth(msg,offset);
+    delay(40);
+  }
 }
 
 
@@ -69,8 +102,8 @@ void dsp_set(char * msg) {
 
 #define SEN_PIN        D6          // D0 pin of line tracking sensor connected to this pin of ESP8266 (VCC on VIN, GND on GND).
 #define SEN_IDLE       2000000     // If there is no interrupt within 2 000 000 us (2 seconds), assume rotation stopped.
-#define SEN_COUNT1     8           // Number of interrupts after a restart ("stabilization") before reporting measurements (must be >=2).
-#define SEN_SIZE1      10          // Window size for first moving average (sen_movav1) - this is used to filter out spikes.
+#define SEN_COUNT1     4           // Number of interrupts after a restart ("stabilization") before reporting measurements (must be >=2).
+#define SEN_SIZE1      8           // Window size for first moving average (sen_movav1) - this is used to filter out spikes.
 #define SEN_STEP1      2           // Any delta smaller than the moving average (sen_movav1) divided by SEN_STEP1 is rejected.
 #define SEN_SIZE2      32          // Window size for second moving average (sen_movav2) - this is to smooth output (not too fast changes).
 volatile int           sen_count1; // Number of all interrupts.
@@ -262,18 +295,20 @@ void show_delta( unsigned long delta, int units ) {
 // ============================================================
 
 #define BAUD       115200  // Baud rate for serial connection.
-#define INTRO_MS   3000    // Time (in ms) for the intro message.
 #define REFRESH_MS 100     // Time (in ms) between display and button refreshes.
 #define TOGGLE_MS  1000    // Time (in ms) between displaying units and delta (when not rotating).
 int units;                 // With the 'flash' button, the units can be chosen. This variable holds the current mode.
 int olddelta;              // Last valid measurement.
 unsigned long oldtime;     // Last time the display was refreshed (when not rotating).
 
+// Arduino callback at startup
 void setup() {
   // Setup serial port (over USB) for tracing.
   Serial.begin(BAUD);
   Serial.printf("\n\nWelcome at mRPM\n");
+  Serial.printf("Version " VERSION "\n");
   // Initialize matrix, sensor en button.
+  esp8266_init();
   dsp_init();
   sen_init();
   but_init();
@@ -281,10 +316,10 @@ void setup() {
   units= 0; // 0=rpm, 1=ms, 2=Hz
   olddelta= 0;
   // Give welcome message.
-  dsp_set("mRPM");
-  delay(INTRO_MS);
+  dsp_scroll("mRPM " VERSION);
 }
 
+// Arduino callback, repeated called after setup()
 void loop(){
   // If 'flash' button is pressed, cycle through unit modes.
   but_scan();

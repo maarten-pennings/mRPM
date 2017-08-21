@@ -58,3 +58,6 @@ the printed serial number on the module should be at the bottom as shown in the 
 
 ## Firmware
 Next step is to flash the [firmware](../arduino) via the Arduino IDE.
+
+ 
+(end of doc)
