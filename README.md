@@ -25,6 +25,9 @@ The following components are used in the project, total cost below $10.
 For wiring information (power, schematics, photos) refer to the [wiring](wiring) directory.
 
 ## Software
-For the firmware inside the ESP8266 refer to the [arduino](arduino) directory.
+The software (firmware inside the ESP8266) is available as binary, 
+and can be [flashed](flash.md) relatively easy.
+Another option is to install the development environment (compiler) 
+and work from the source; refer to the [arduino](arduino) directory.
 
 (end of doc)
