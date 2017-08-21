@@ -3,7 +3,12 @@ Maarten's RPM meter - arduino firmware
 
 
 ## Introduction
-This project uses the Arduino IDE to compile and upload an image for the ESP8266.
+The mRPM project uses the Arduino development tools to generate a firmware 
+image for the ESP8266. This document explains how to install and use the 
+Arduino tools to compile and flash from the sources. There is another 
+[document](../flash.md) that explains how to use a pre-compiled 
+binary and flash that.
+
 The mRPM firmware consists of the following modules
  - mRPM, the main program
  - MAX7219_Dot_Matrix, a driver for the 4 x 8x8 dot matrix - by [Nick Gammon](https://github.com/nickgammon/MAX7219_Dot_Matrix)
@@ -35,7 +40,7 @@ In either case
 
 Typically the project is saved at `C:\Users\Maarten\Documents\Arduino\Blink`.
 Write down the root directory for the Arduino projects
-```
+```Text
 C:\Users\Maarten\Documents\Arduino
 ```
 
@@ -44,11 +49,11 @@ C:\Users\Maarten\Documents\Arduino
 Follow these steps
  - Download the zip of this project (press the green button on the [home page](https://github.com/maarten-pennings/mRPM)).
  - Open the zip, locate the directory `arduino` and within that the subdirectory `mRPM`.
-   ```
+   ```Text
    C:\Users\Maarten\Downloads\mRPM-master.zip\mRPM-master\arduino\mRPM
    ```
  - Copy the `mRPM` directory to the Arduino project root.
-   ```
+   ```Text
    C:\Users\Maarten\Documents\Arduino\mRPM
    ```
 
