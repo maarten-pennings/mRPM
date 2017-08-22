@@ -22,7 +22,7 @@ If the Arduino IDE with ESP8266 support is installed on your Windows PC:
  - Locate the tool. On my system it is located at
    `C:\Users\maarten\AppData\Local\Arduino15\packages\esp8266\tools\esptool\0.4.9\esptool.exe`
  - Create a directory named `flash` on the Desktop.
- - Copy the `esptool.exe` to that directory.
+ - Copy (don't *move*) the `esptool.exe` to that directory.
 
 If there is no Arduino on your PC, follow these steps
  - Goto [esptool-ck](https://github.com/igrr/esptool-ck/releases).
@@ -71,15 +71,15 @@ Now that everything is prepared, we are ready to flash.
 Steps:
  - Make sure the ESP8266 is still connected with the USB cable to the PC.
  - While holding shift down, right-click on the `flash` directory on the Desktop
-   and select `Open command window here`.
+   and select `Open powerShell window here` (or alternatively `Open command window here`).
  - In the terminal that pops up enter this command
    ```
-   esptool  -cd nodemcu  -cb 512000  -cp COM3  -cf mRPM.ino.bin
+   .\esptool  -cd nodemcu  -cb 512000  -cp COM3  -cf mRPM.ino.bin
    ```
    Replace `COM3` with the COM port found in the previous section.
  - You should see
    ```
-   C:\Users\maarten\Desktop\flash>esptool  -cd nodemcu  -cb 512000  -cp COM3  -cf mRPM.ino.bin
+   C:\Users\maarten\Desktop\flash>.\esptool  -cd nodemcu  -cb 512000  -cp COM3  -cf mRPM.ino.bin
    Uploading 235264 bytes from mRPM.ino.bin to flash at 0x00000000
    ................................................................................ [ 34% ]
    ................................................................................ [ 69% ]
