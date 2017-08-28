@@ -7,20 +7,18 @@ This document describes how to flash a binary released firmware into the ESP8266
 For novice users, flashing a firmware into an ESP8266/NodeMCU board is 
 quite a hurdle. Either they have to download and install the Arduino IDE 
 with ESP8266 plugin or they have to use the
-command line esptool. The former is explained on the [arduino](arduino)) page.
+command line esptool. The former is explained on the [arduino](arduino) page.
 The latter is explain below in [Manual flashing](#manual-flashing).
 
-However, this release comes with a script that automates the manual flashing.
-This document explains how to takes the shortcut in [Scripted flashing](#scripted-flashing).
-
-This project delivers a Windows batch script (flash.cmd) that should deliver a "one-click" flash experience. It relies on the esptool from Christian Klippel to do the actual flashing.
+However, this project has releases which come with a script that automates the manual flashing.
+This document explains how to take that shortcut in [Scripted flashing](#scripted-flashing) below.
 
 
 
 ## Scripted flashing
 Take these steps
  - Go to the [release](https://github.com/maarten-pennings/mRPM/releases) 
-   tab on the projects home page.
+   tab on the project's home page.
  - Scroll to find latest stable release.
    At the moment of writing this document the latest release is v4a.
  - Click the `flash.zip` file to download it.
@@ -41,12 +39,12 @@ Congratulations, you're done!
 The ESP8266/NodeMCU board creates a COM port on the PC, and the script 
 will send the firmware file to that COM port.
 
-If there is only one COM port on your PC the script will select it.
+If there is only one COM port on your PC the script will select it automatically.
 If there are multiple COM ports you have to select the right one.
 
 In case of doubt, run the script once without and once with the 
 ESP8266/NodeMCU board connected and see which COM port is added the 
-second time.
+second time. That is the COM port you need to select.
 
 
 
@@ -57,7 +55,10 @@ and flashing fails. Give it another try.
  
 
 ## Manual flashing
-To flash the a firmware image into an ESP8266, we need
+In case you do not want to use the script, this section describes
+how to flash manually.
+
+You need
  - A flash tool
  - A firmware image
  - A connected ESP8266
