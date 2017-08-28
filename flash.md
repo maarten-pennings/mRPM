@@ -2,7 +2,61 @@
 This document describes how to flash a binary released firmware into the ESP8266.
 
 
+
 ## Introduction
+For novice users, flashing a firmware into an ESP8266/NodeMCU board is 
+quite a hurdle. Either they have to download and install the Arduino IDE 
+with ESP8266 plugin or they have to use the
+command line esptool. The former is explained on the [arduino](arduino)) page.
+The latter is explain below in [Manual flashing](#Manual flashing).
+
+However, this release comes with a script that automates the manual flashing.
+This document explains how to takes the shortcut in [Scripted flashing](#Scripted flashing).
+
+This project delivers a Windows batch script (flash.cmd) that should deliver a "one-click" flash experience. It relies on the esptool from Christian Klippel to do the actual flashing.
+
+
+
+## Scripted flashing
+Take these steps
+ - Go to the [release](https://github.com/maarten-pennings/mRPM/releases) 
+   tab on the projects home page.
+ - Scroll to find latest stable release.
+   At the moment of writing this document the latest release is v4a.
+ - Click the `flash.zip` file to download it.
+ - Save to some easy location (e.g. `Desktop`, or `Downloads`).
+ - Unzip `flash.zip`.
+ - Connect the ESP8266/NodeMCU board with USB cable to PC.
+ - Double click `flash.cmd` in the unzipped directory.
+ - Press OK (see note 1 below)
+ - Wait for flashing to complete successfully (see note 2 below).
+
+You should now have this [result](https://youtu.be/PuOR1rizvE4).
+ 
+Congratulations, you're done!
+
+
+
+### Note 1: COM ports
+The ESP8266/NodeMCU board creates a COM port on the PC, and the script 
+will send the firmware file to that COM port.
+
+If there is only one COM port on your PC the script will select it.
+If there are multiple COM ports you have to select the right one.
+
+In case of doubt, run the script once without and once with the 
+ESP8266/NodeMCU board connected and see which COM port is added the 
+second time.
+
+
+
+### Note 2: Flash failure 
+The script uses the esptool, and that sometimes can not find the ESP8266,
+and flashing fails. Give it another try.
+
+ 
+
+## Manual flashing
 To flash the a firmware image into an ESP8266, we need
  - A flash tool
  - A firmware image
@@ -14,7 +68,8 @@ If you have an older version of Windows you need to install a driver for
 the ESP8266/NodeMCU board. That is not covered in this document.
 
 
-## The flash tool
+
+### The flash tool
 To flash the ESP8266 a tool is needed.
 We will be using the `esptool.exe`.
 
@@ -37,7 +92,8 @@ In either case there is now a directory named `flash` on the Desktop.
 Inside that directory there is `esptool.exe`.
 
 
-## The firmware image
+
+### The firmware image
 To flash the ESP8266 a firmware image is needed.
 We will be using a binary release from this project.
 
@@ -49,8 +105,9 @@ Steps
  - Click the `bin` file (e.g. `mRPM.ino.bin`) to download it.
  - Save in the `flash` directory (on the Desktop), created in the previous section.
 
+
  
-## ESP8266 connection
+### ESP8266 connection
 To flash the ESP8266 it needs to be connected to the PC using a USB cable.
 
 Steps:
@@ -65,7 +122,8 @@ Steps:
    Note down the COM port number, here `COM3`.
 
 
-## Execute flashing
+   
+### Execute flashing
 Now that everything is prepared, we are ready to flash.
 
 Steps:
@@ -87,9 +145,4 @@ Steps:
    C:\Users\maarten\Desktop\flash>
    ```
 
-You should now have this [result](https://youtu.be/PuOR1rizvE4).
- 
-Congratulations, you're done!
-
- 
 (end of doc)
