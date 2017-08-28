@@ -8,10 +8,10 @@ For novice users, flashing a firmware into an ESP8266/NodeMCU board is
 quite a hurdle. Either they have to download and install the Arduino IDE 
 with ESP8266 plugin or they have to use the
 command line esptool. The former is explained on the [arduino](arduino)) page.
-The latter is explain below in [Manual flashing](#Manual flashing).
+The latter is explain below in [Manual flashing](#manual-flashing).
 
 However, this release comes with a script that automates the manual flashing.
-This document explains how to takes the shortcut in [Scripted flashing](#Scripted flashing).
+This document explains how to takes the shortcut in [Scripted flashing](#scripted-flashing).
 
 This project delivers a Windows batch script (flash.cmd) that should deliver a "one-click" flash experience. It relies on the esptool from Christian Klippel to do the actual flashing.
 
