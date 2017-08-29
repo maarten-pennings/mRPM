@@ -107,6 +107,7 @@ Steps
  - Scroll to find latest stable release.
    At the moment of writing this document the latest release is v4.
  - Click the `bin` file (e.g. `mRPM.ino.bin`) to download it.
+   Or download `flash.zip` which contains the `bin`.
  - Save in the `flash` directory (on the Desktop), created in the previous section.
 
 
