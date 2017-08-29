@@ -16,7 +16,10 @@ This document explains how to take that shortcut in [Scripted flashing](#scripte
 
 
 ## Scripted flashing
-Take these steps
+In a nutshell the flash procedure is as follows: 
+download the release, unzip it, and double click `flash.cmd`.
+
+The more detailed description:
  - Go to the [release](https://github.com/maarten-pennings/mRPM/releases) 
    tab on the project's home page.
  - Scroll to find latest stable release.
