@@ -26,9 +26,12 @@ The more detailed description:
    At the moment of writing this document the latest release is v4a.
  - Click the `flash.zip` file to download it.
  - Save to some easy location (e.g. `Desktop`, or `Downloads`).
- - Unzip `flash.zip`.
+ - Unzip `flash.zip` by right-clicking and `Extract All...`
+   (or right-click, 7-Zip, `Extract Here`, if 7Zip is installed).
  - Connect the ESP8266/NodeMCU board with USB cable to PC.
  - Double click `flash.cmd` in the unzipped directory.
+ - If a "Windows protected your PC" pops up: click `More info` 
+   and then the button `Run anyway`.
  - Press OK (see note 1 below)
  - Wait for flashing to complete successfully (see note 2 below).
 
