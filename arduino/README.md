@@ -36,6 +36,7 @@ In either case
  - Install the Arduino IDE.
  - Add the ESP8266 compiler/libraries/examples.
  - Ensure that in Tools | Board, the "NodeMCU 1.0 (ESP-12E Module)" is selected.
+ - Ensure that in Tools | Port, the COM port for the ESP is selected.
  - Get the blink example to work (this requires the ESP8266 board to be connected to your PC with a micro USB cable).
  - Change the blink example a bit (e.g. make it blink faster) and save the (edited) blink project.
 
@@ -66,6 +67,7 @@ Next, follow these steps
  - Double click the project `C:\Users\Maarten\Documents\Arduino\mRPM\mRPM.ino` to open it in the Arduino IDE.
  - Ensure that in Tools | Board, the "NodeMCU 1.0 (ESP-12E Module)" is selected.
  - Compile it by pressing the Verify (green V in upper left corner) button.
+ - Ensure that in Tools | Port, the COM port for the ESP is selected.
  - Flash it by it by pressing the Upload (green right arrow) button.
  - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
  - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
