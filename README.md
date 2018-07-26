@@ -16,8 +16,8 @@ See [YouTube](https://youtu.be/PuOR1rizvE4) for a demo of the project.
 The following components are used in the project, total cost below $10.
 - [Line tracking sensor](https://www.aliexpress.com/item/Line-tracking-Sensor-For-robotic-and-car-DIY-Arduino-projects-Digital-Out/32654587628.html)
   An infra-red emitter and detector - sub $1
-  (half priced [alternative](https://www.aliexpress.com/item/Free-shipping-LC320EXN-6870C-0370A-Logic-board-New-In-stock/593122262.html)).
-- [4 element 8x8 LED matrix](https://www.aliexpress.com/item/1Pcs-MAX7219-Dot-Matrix-Module-For-arduino-Microcontroller-4-In-One-Display-with-5P-Line/32624431446.html)
+  (half priced [alternative](https://www.aliexpress.com/item/1PCS-TCRT5000-Infrared-Reflective-IR-Photoelectric-Switch-Barrier-Line-Track-Sensor-Module-blue/32818041246.html)).
+- [4 element 8x8 LED matrix](https://www.aliexpress.com/item/MAX7219-Dot-Matrix-Module-Microcontroller-4-In-One-Display-with-5P-Line/32880754577.html)
   A 4-in-one MAX7219 based 8x8 Dot Matrix Module - sub $4
   ([alternative](https://www.aliexpress.com/item/MAX7219-Dot-Matrix-Module-For-Arduino-Microcontroller-4-In-One-Display-with-5P-Line/32648450356.html)).
 - [NodeMCU/ESP8266](https://www.aliexpress.com/item/NodeMCU-WIFI-module-integration-of-ESP8266-extra-memory-32M-flash-USB-serial-CH340G/32739832131.html)
