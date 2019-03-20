@@ -35,13 +35,13 @@ than the official [Arduino web page](http://www.arduinesp.com/getting-started).
 In either case
  - Install the [Arduino IDE](https://www.arduino.cc/en/Main/Software).
  - Add the ESP8266 compiler/libraries/examples.
-   First in "File > Preferences > Additional boards Manager URLs" 
+   First in "File | Preferences | Additional boards Manager URLs" 
    add `http://arduino.esp8266.com/stable/package_esp8266com_index.json` 
    (with a comma if there are others).
-   Secondly select "Tools > Board > Boards Manager" to get the Boards Manager,
+   Secondly select "Tools | Board | Boards Manager" to get the Boards Manager,
    find esp8266 and click Install.
- - Ensure that in Tools | Board, the "NodeMCU 1.0 (ESP-12E Module)" is selected.
- - Ensure that in Tools | Port, the COM port for the ESP is selected.
+ - Ensure that in "Tools | Board", the "NodeMCU 1.0 (ESP-12E Module)" is selected.
+ - Ensure that in "Tools | Port", the COM port for the ESP is selected.
  - Get the blink example to work (this requires the ESP8266 board to be connected to your PC with a micro USB cable).
  - Change the blink example a bit (e.g. make it blink faster) and save the (edited) blink project.
 
@@ -70,9 +70,9 @@ The ESP8266 board is assumed to be wired to the matrix and sensor - see [wiring]
 
 Next, follow these steps
  - Double click the project `C:\Users\Maarten\Documents\Arduino\mRPM\mRPM.ino` to open it in the Arduino IDE.
- - Ensure that in Tools | Board, the "NodeMCU 1.0 (ESP-12E Module)" is selected.
+ - Ensure that in "Tools | Board", the "NodeMCU 1.0 (ESP-12E Module)" is selected.
  - Compile it by pressing the Verify (green V in upper left corner) button.
- - Ensure that in Tools | Port, the COM port for the ESP is selected.
+ - Ensure that in "Tools | Port", the COM port for the ESP is selected.
  - Flash it by it by pressing the Upload (green right arrow) button.
  - Quickly waive a white sheet of paper in front of the sensor. Its blue led should flash, and the matrix should show RPM numbers.
  - On the ESP8266 board, press the small button labeled Flash (not RST) to change units.
