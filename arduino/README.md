@@ -33,8 +33,13 @@ This nodemcu specific [instructables page](http://www.instructables.com/id/Quick
 than the official [Arduino web page](http://www.arduinesp.com/getting-started).
 
 In either case
- - Install the Arduino IDE.
+ - Install the [Arduino IDE](https://www.arduino.cc/en/Main/Software).
  - Add the ESP8266 compiler/libraries/examples.
+   First in "File > Preferences > Additional boards Manager URLs" 
+   add `http://arduino.esp8266.com/stable/package_esp8266com_index.json` 
+   (with a comma if there are others).
+   Secondly select "Tools > Board > Boards Manager" to get the Boards Manager,
+   find esp8266 and click Install.
  - Ensure that in Tools | Board, the "NodeMCU 1.0 (ESP-12E Module)" is selected.
  - Ensure that in Tools | Port, the COM port for the ESP is selected.
  - Get the blink example to work (this requires the ESP8266 board to be connected to your PC with a micro USB cable).
