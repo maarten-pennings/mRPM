@@ -1,8 +1,8 @@
 # mRPM
-Maarten's RPM (Revolutions Per Pinute) meter.
+Maarten's RPM (Revolutions Per Minute) meter.
 
 ## Introduction
-This project describes how to make a RPM (revolutions per minute) meter.
+This project describes how to make an RPM (revolutions per minute) meter.
 It uses an ESP8266, a 4 element 8x8 LED matrix and a line tracking sensor.
 Jan Ridders of [Jan Ridders Modelbouw](http://www.ridders.nu/Webpaginas/pagina_toerenteller/tellerframeset.htm) requested this project.
 He needs to measure the speed of his Stirling, steam or combustion engines.
